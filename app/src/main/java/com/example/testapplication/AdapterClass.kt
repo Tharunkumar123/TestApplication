@@ -53,7 +53,7 @@ class AdapterClass(private val modelClass: ArrayList<ModelClass> = ArrayList()) 
 
     }
 
-    private fun changeBg(position: Int, selected: Int) {4
+    private fun changeBg(position: Int, selected: Int) {
         val myModel = modelClass[position]
         if (myModel.selected != selected) {
             myModel.selected = selected
