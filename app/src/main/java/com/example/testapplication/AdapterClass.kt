@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testapplication.myapplication.MyApplication
 
-class AdapterClass(val modelClass: ArrayList<ModelClass> = ArrayList()) :
+class AdapterClass(private val modelClass: ArrayList<ModelClass> = ArrayList()) :
     RecyclerView.Adapter<AdapterClass.BaseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val view = LayoutInflater.from(MyApplication.getApplicationContext())
@@ -48,46 +48,12 @@ class AdapterClass(val modelClass: ArrayList<ModelClass> = ArrayList()) :
             changeBg(position,2)
         }
 
-//        when(modelClass[position].backgroundUpdate){
-//            ModelClass.Status.NORMAL->{
-//
-//                holder.constraintLayout.setBackgroundResource(R.drawable.cardbackground_0)
-//            }
-//            ModelClass.Status.GREEN->{
-//                holder.constraintLayout.setBackgroundResource(R.drawable.cardbackground_2)
-//            }
-//            ModelClass.Status.BLUE->{
-//                holder.constraintLayout.setBackgroundResource(R.drawable.cardbackground_1)
-//            }
-//        }
-//        holder.greenButton.setOnClickListener {
-//
-//            modelClass[position].backgroundUpdate= ModelClass.Status.GREEN
-//            notifyItemChanged(position)
-//        }
-//        holder.blueButton.setOnClickListener {
-//
-//            modelClass[position].backgroundUpdate= ModelClass.Status.BLUE
-//            notifyItemChanged(position)
-//
-//        }
 
-//for (i in modelClass.indices){
-//    if (holder.position==i){
-//        holder.greenButton.setOnClickListener {
-//
-//            holder.card.setBackgroundResource(R.drawable.cardbackground_2)
-//        }
-//        holder.blueButton.setOnClickListener {
-//
-//            holder.card.setBackgroundResource(R.drawable.cardbackground_1)
-//        }
-//    }
-//
-//}
+
+
     }
 
-    fun changeBg(position: Int, selected: Int) {
+    private fun changeBg(position: Int, selected: Int) {4
         val myModel = modelClass[position]
         if (myModel.selected != selected) {
             myModel.selected = selected
